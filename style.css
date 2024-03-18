@@ -1,0 +1,15 @@
+.bold{
+    font-weight: bold;
+}
+.visibile {
+    display: none;
+}
+.box{
+    border: 1px solid black;
+    width: 400px;
+    height: auto;
+    border-radius: 15%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}

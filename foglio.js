@@ -45,13 +45,19 @@ let CreaArticolo = document.querySelector('.CreaArticolo');
 let contenitore= document.querySelector('.contenitore');
 
 CreaArticolo.addEventListener( 'click',()=>{
+    if(descrizione.value && titolo.value != ''){
     let r = Math.floor(Math.random() * (256 - 0));
     let g = Math.floor(Math.random() * (256 - 0));
     let b = Math.floor(Math.random() * (256 - 0));
  let box = document.createElement('div');
  box.style.backgroundColor= `rgb(${r},${g},${b})`;
  box.classList.add("box","m-5");
- box.innerHTML= `<h2> ${titolo.value} <h2> <br> <p> ${descrizione.value} `
+ let date = new Date();
+ let formatDate = date.toLocaleDateString()
+ box.innerHTML= `<h2> ${titolo.value} <h2> <br> <p> ${descrizione.value}  <br> ${formatDate} `
  contenitore.appendChild(box);
- 
+ descrizione.value='';
+ titolo.value='';
+    }else { alert('inserisci qualcosa nei campi');
+};
 })
